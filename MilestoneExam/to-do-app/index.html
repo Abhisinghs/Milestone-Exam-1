@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple to-do app</title>
+      <!-- link css file  -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- container  -->
+    <div class="container">
+        <h1>To-do List</h1>
+
+        <div class="button">
+            <input type="text" class="input_box" placeholder="write your tast">
+            <button onclick="add()">Add</button>
+        </div>
+
+        <ul id="list">
+            <!-- //first we list empty  -->
+        
+        </ul>
+    </div>
+    
+</body>
+<!-- add js file  -->
+<script>
+    let list=document.getElementById("list");
+    let input=document.getElementsByClassName("input_box");
+    function add(){
+        if(input[0].value ===''){
+            alert("You must write something!");
+        }
+        else{
+            let li=document.createElement("li");
+            li.innerText=input[0].value;
+            li.addEventListener("click",()=>{
+                li.style.textDecoration='line-through'
+            })
+            list.appendChild(li);
+            let span=document.createElement("span");
+            span.innerText="\u00d7";
+            li.appendChild(span);
+        }
+        input[0].value="";
+    }
+
+    list.addEventListener("click",(e)=>{
+        if(e.target.tagName=='SPAN'){
+            e.target.parentElement.remove()
+        }
+    })
+    
+</script>
+</html>

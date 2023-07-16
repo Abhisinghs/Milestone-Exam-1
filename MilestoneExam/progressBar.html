@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Bar</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Ponppin',sans-serif;
+            box-sizing: border-box;
+        }
+        /* body  */
+        body{
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: aquamarine;
+        }
+
+        .container{
+            height: 60vh;
+            width: 80%;
+            border: 2px solid black;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: space-around;
+            background: rgb(230, 228, 228);
+
+        }
+        .contain{
+            border: 2px solid green;
+            height: 10%;
+            width: 95%;
+            background:hwb(120 65% 15%);
+        }
+        h1{
+            font-size: 40px;
+            color: #ff004f;
+        }
+        #progress{
+            height: 100%;
+            width: 2%;
+            background: green;
+            transition: 5s;
+        }
+        button{
+            font-size: 20px;
+            padding:8px 20px;
+            background: #ff004f;
+            color: white;
+            border-radius: 5px;
+            border: 1px solid white;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+        button:hover{
+            background:rgb(147, 144, 144);
+            color: #ff004f;
+
+        }
+    </style>
+
+</head>
+<body>
+    <!-- make a div container -->
+    <div class="container">
+        <h1>My JavaScript Progress</h1>
+
+        <!-- make a div for show progress  -->
+        <div class="contain">
+            <!-- show performance  -->
+            <div id="progress"></div>
+        </div>
+
+        <button id="btn">click me</button>
+    </div>
+</body>
+<!-- define script file  -->
+<script>
+    let progress=document.getElementById("progress");
+    let btn=document.getElementById("btn");
+    let width=2;
+    
+    btn.addEventListener("click",()=>{
+        document.body.style.background='lightgreen'
+        progress.style.width="100%"
+    })
+</script>
+</html>

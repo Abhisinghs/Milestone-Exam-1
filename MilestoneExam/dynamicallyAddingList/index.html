@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamically adding list </title>
+    <!-- link css file  -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="heading">
+            <h1>What will you learn</h1>
+        </div>
+        <div class="input">
+            <button onclick="list_add()" id="button">click to add</button>
+        </div>
+        <div class="content">
+            <ul>
+                <li class="list"><h4>HTML and Semantics</h4></li>
+                <li class="list"><h4>Starting with CSS</h4></li>
+                <li class="list"><h4>Working Template</h4></li>
+                <li class="list"><h4>Mobile responsive webpages</h4></li>
+                <li class="list"><h4>Grid and Flex-box in CSS</h4></li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+<!-- add script file  -->
+<script>
+    let btn=document.getElementById("button");
+    let list_item=document.getElementsByClassName("list");
+    let container=document.getElementsByClassName("container");
+    let content=document.getElementsByClassName('content');
+    let heading=document.getElementsByClassName('heading')
+    let counter=0;
+
+    function list_add(){
+        list_item[counter++].style.display="none"
+        if(counter>=5){
+            let c=0;
+            while(c<=4){
+                (list_item[c]).style.display="block";
+                c++;
+            }
+            content[0].style.display="flex-start"
+            btn.style.display="none";
+                    
+        }
+    }
+
+    //after finished list item 
+</script>
+</html>

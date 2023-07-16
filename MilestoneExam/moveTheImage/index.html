@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move the image position</title>
+    <!-- link css file  -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- make a div for image  -->
+    <div id="image">
+        <img src="./mainBackground.png" alt="bg-image">
+    </div>
+</body>
+
+<script>
+    let img=document.getElementById("image");
+    let up=30;
+    let left_arrow=35;
+    document.onkeydown=function(e){
+        switch(e.which){
+            case 37:
+                //left
+                if(left_arrow>=0)
+                    img.style.left=(--left_arrow)+"%";
+                break;
+            case 38:
+                //up
+                if(up>=0)
+                    img.style.top=(--up)+"%"
+                break;
+            case 39:
+                //right
+                if(left_arrow<=100)
+                    img.style.left=(++left_arrow)+"%"
+                break;
+            case 40:
+                // down
+                if(up<=60)
+                    img.style.top=(++up)+"%";
+                break;
+            default:alert("!sorry you entered the wrong key");
+            
+        }
+        
+    }
+</script>
+</html>

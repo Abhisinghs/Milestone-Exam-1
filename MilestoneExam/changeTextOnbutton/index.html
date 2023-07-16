@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change text on button click </title>
+    <!-- link css file  -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="header">
+        <h1 id="show_tag" >The most affordable learning
+            platform</h1>
+        <h1 id="hide_tag">PW Skills</h1>
+        <button onclick="heading_change()">click me</button>
+    </div>
+</body>
+<!-- script file  -->
+<script>
+    let hide_tag=document.getElementById("hide_tag")
+    let show_tag=document.getElementById("show_tag")
+    let head=document.getElementsByClassName("header")
+    function heading_change(){
+        if(show_tag.style.display == "block"){
+            hide_tag.style.display="block";
+            head[0].style.background="black"
+            hide_tag.style.color="white"
+            document.body.style.background="white"
+            show_tag.style.display="none" 
+        }
+        else{
+            hide_tag.style.display="none";
+            head[0].style.background="white"
+            hide_tag.style.color="black"
+            document.body.style.background="black"
+            show_tag.style.display="block"
+        }
+
+    }
+</script>
+</html>

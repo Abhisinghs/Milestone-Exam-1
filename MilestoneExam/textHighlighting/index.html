@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text highlight </title>
+    <!-- link css file  -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- first make a container  -->
+    <div class="container">
+        <!-- make a heading  -->
+        <h1><span>Highlighted</span>  text that length <br> is greater than 8 in given paragrap</h1>
+
+        <!-- paragraph div  -->
+        <div>
+            <p id="para">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis dolores, atque inventore accusamus saepe non omnis, error repudiandae quas quisquam asperiores. Est ipsa praesentium, amet, deleniti placeat perferendis magni velit inventore porro, aut cupiditate eveniet blanditiis exercitationem ab repudiandae earum molestiae neque nostrum libero perspiciatis incidunt voluptatem? Aperiam cupiditate molestias facilis! Eligendi voluptatum mollitia distinctio nesciunt voluptates voluptatibus a. Mollitia aut officiis dolorum saepe nisi tenetur qui, impedit ipsa quis, ex nemo iste sunt eligendi ut illo praesentium, maiores laborum corrupti reprehenderit quam asperiores dicta. Illum, numquam pariatur! Eligendi molestias a maiores harum ad nobis minima sunt! Esse odit delectus libero explicabo nostrum ab voluptatum eum totam officia. Autem, inventore vero magni vel, facilis deleniti alias fugiat dolor itaque nemo illum, aperiam a repellat similique neque soluta sequi cum cumque voluptatibus eveniet. Facere ipsum commodi libero blanditiis nihil quo saepe error quaerat sint amet fugiat quod, hic voluptas placeat possimus natus illo, necessitatibus ab? Sed voluptas alias obcaecati dicta nam consequatur tenetur at veritatis nesciunt. Distinctio quasi quae sint molestiae ipsum nisi dignissimos ad quidem, veniam dolorum pariatur ducimus suscipit dolore necessitatibus numquam possimus eius autem perferendis optio? Vitae error quam eligendi similique nobis totam cumque, fugiat modi adipisci voluptas!</p>
+        </div>
+    </div>
+</body>
+
+<!-- apply script  -->
+<script>
+    let para=document.getElementById('para');
+    para.innerHTML=para.innerHTML.split(' ').map((word)=>{
+        return word.length>=8? `<span style='background-color:yellow'> ${word}</span>`:word
+    }).join(" ");
+</script>
+</html>

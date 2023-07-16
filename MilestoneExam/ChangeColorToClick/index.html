@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>change bg color to click</title>
+    <!-- link css file  -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- we only make one button that change the bg-color  -->
+    <div class="button">
+        <button id="btn" onclick="change_color()">click to change</button>
+    </div>
+</body>
+
+<script>
+    function change_color(){
+        document.body.style.background=random_color();
+        (document.getElementById("btn")).style.background=random_color();
+        (document.getElementById("btn")).style.color="black";
+    }
+    function random_color(){
+        // we have color in this form #  0123456789 ABCDEF
+        let num='0123456789ABCDEF'
+        let cons="#"
+    
+        for(let i=0;i<6;i++){
+            cons+=num[(Math.floor(Math.random()*16))];
+        }
+        return cons;
+    }
+</script>
+</html>

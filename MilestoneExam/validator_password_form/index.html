@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change text on button click </title>
+    <!-- link css file  -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="form">
+        <label for="email">
+            <input type="text" class="check" name="email" placeholder="Your Email">
+            <h6 class="msg">please use @ in gamil</h6>
+        </label>
+
+        <label for="password">
+            <input type="password" class="check" name="password" placeholder="Your Password">
+            <h6 class="msg">please enter minimum 8 character</h6>
+        </label>
+        <button type="submit">submit</button>
+    </div>
+</body>
+<!-- script file  -->
+<script>
+    let submit_button=document.querySelector("button")
+    let email_password=document.getElementsByClassName("check")
+    let warning_msg=document.getElementsByClassName("msg")
+    
+    submit_button.addEventListener("click",()=>{
+        console.log(email_password[1].value.length);
+        if(email_password[0].value.match(/@/g)=='@'){
+            document.body.style.background="blue";
+        }
+        else{
+            warning_msg[0].style.display="block";
+        }
+        if(email_password[1].value.length>=8)
+            document.body.style.background="blue";
+        else{
+            warning_msg[1].style.display="block";
+        }
+    })
+</script>
+</html>
